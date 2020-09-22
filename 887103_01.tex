@@ -1,0 +1,264 @@
+\providecommand{\pdfxopts}{a-1b,cyrxmp}
+\providecommand{\thisyear}{2020}
+\immediate\write18{rm \jobname.xmpdata}%  uncomment for Unix-based systems
+\begin{filecontents*}{\jobname.xmpdata}
+\Title{ЦЭ 887103.01 Э3 Веренёв Андрей Александрович \textemdash\thisyear}
+\Author{Веренёв Андрей}
+\Creator{pdfTeX + pdfx.sty with options \pdfxopts }
+\Subject{Практическая работа №1 Вектороная ШИМ}
+\Keywords{ШИМ, ЕСКД, PWM}
+\CoverDisplayDate{май \thisyear}
+\CoverDate{\today}
+\Copyrighted{True}
+\Copyright{Public Domain}
+\CopyrightURL{http://github.com/trot-t}
+\Creator{pdfTeX + pdfx.sty with options \pdfxopts }
+\end{filecontents*}
+
+\documentclass[russian,utf8,nocolumnxxxi,nocolumnxxxii]{eskdtext}
+
+\pdfcompresslevel=9
+
+\usepackage[\pdfxopts]{pdfx}[2016/03/09]
+\PassOptionsToPackage{obeyspaces}{url}
+\let\tldocrussian=1  % for live4ht.cfg
+% http://texdoc.net/texmf-dist/doc/latex/pdfx/pdfx.pdf
+
+%
+% https://tavda.net/blog/latex/
+% 
+
+\usepackage[TS1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+                                           % для чертежей
+  % для электронных схем
+
+\usepackage{enumerate, enumitem}
+\usepackage{fancyhdr, graphicx, proof, comment, multicol}
+\usepackage{pgf,tikz,pgfplots}
+\usepackage{wrapfig}
+\usepackage{mathrsfs}
+\usepackage{pst-plot}
+\usepackage{microtype} % Modifies spacing between letters and words
+\usepackage{mathpazo} % Modifies font. Optional package.
+\usepackage{mdframed} % Required for boxed problems.
+\usepackage{parskip} % Left justifies new paragraphs.
+\usepackage{tikz}
+\usepackage{amsmath,amsfonts}
+\usepackage{amssymb}
+%\usepackage[scr]{rsfso} % буквы для алгебры множеств
+
+\usepackage{gnuplottex}   % автоматическая вставка графиков из программ моделирования электрических схем
+
+\usepackage{enumitem}
+
+%%% Межстрочный интервал
+\usepackage{setspace}
+
+%% таблицы в стиле старых книг
+\usepackage{booktabs} 
+
+%% для подкладывания отдельных pdf-страниц 
+\usepackage{pdfpages}
+
+%% для кода
+\usepackage{listingsutf8}
+
+\definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
+\definecolor{lightblue}{rgb}{0,0,1}
+
+\definecolor{grey}{rgb}{0.5,0.5,0.5}
+\definecolor{blue}{rgb}{0,0,1}
+\definecolor{violet}{rgb}{0.5,0,0.5}
+
+\definecolor{darkred}{rgb}{0.5,0,0}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+
+
+\lstset{%
+  language=C++,%
+  morekeywords={constexpr,nullptr,size_t,uint32_t,assert,override,final},%
+  basicstyle=\ttfamily\footnotesize,%
+  sensitive=true,%
+  keywordstyle=\color{blue},%
+  stringstyle=\color{darkgreen},%
+  commentstyle=\color{violet},%
+  showstringspaces=false,%
+  tabsize=2,%
+  frame=leftline,
+  rulecolor=\color{lightblue},
+  xleftmargin=10pt,
+}
+
+\lstset{
+extendedchars=\true,
+%inputencoding=utf8x,   
+  numberstyle=\tiny,
+  numbers=left,
+  numbersep=10pt,
+  xleftmargin=10pt,
+  framesep=4.5mm,
+  framexleftmargin=2.5mm,
+  framexleftmargin=5pt,
+  framesep=15pt,
+  fillcolor=\color{lightgrey},
+}
+
+\def\No{\textnumero} % №
+
+
+%\ESKDcompany{Санкт-Петербургский государственный электротехнический университет "ЛЭТИ"}
+\ESKDtitle{отчет по практической работе}
+\ESKDsignature{ШИМ}
+\ESKDauthor{\scalebox{0.9}[1.0]{Веренёв А.А.}}
+\ESKDchecker{\scalebox{0.9}[1.0]{Прокшин~А.Н.}}
+\ESKDdocName{Веренев Андрей Александрович}
+
+\ESKDdocName{Векторная ШИМ}
+\ESKDsignature{ПРАКТИЧЕСКАЯ РАБОТА}
+ 
+\ESKDdepartment{%
+Государственное образовательное учреждение высшего профессионального образования
+%кафедра РАПС
+}
+\ESKDcompany{%
+<<Санкт-Петербургский государственный электротехнический университет "ЛЭТИ">> 
+}
+\ESKDauthor{\scalebox{0.9}[1.0]{Веренёв А.А.}} % "Разраб." в штампе на листе содержания
+\ESKDchecker{\scalebox{0.9}[1.0]{Прокшин А.Н.}} % "Пров."  в штампе на листе содержания
+\ESKDnormContr{\scalebox{0.9}[1.0]{Веренёв А.А..}} % "Н. контр." в штампе на листе содержания
+\ESKDapprovedBy{\scalebox{0.9}[1.0]{Прокшин А.Н.}}%  "Увт." в штампе на листе содержания
+\ESKDdate{2020/05/15} % Дата (Год отображается на титульной странице) 
+\ESKDsignature{Цифровая Электроника 887103.01 Э3} % Шифр
+\ESKDletter{}{У}{} % Литеры, для учебных работ используется литера У
+ 
+\renewcommand{\ESKDtheTitleFieldX}{%
+Санкт-Петербург
+ 
+\ESKDtheYear~г.} % Шаблон для отображения в нижней части титульного листа города и года 
+%\author{}
+% Конец преамбулы
+
+\begin{document}
+\maketitle
+
+% шаблон графика параболы
+%\begin{tikzpicture}
+%\newcommand{\xb}{-3}
+%\newcommand{\xa}{3}
+%\draw[thin, ->] (-6,0) -- (6,0) node[right] {$X$};
+%\draw[thin, ->] (0,-6) -- (0,6) node[left] {$Y$};
+%\foreach \x\xtext in {-5/-5,5/5,{\xb}/\xb,{\xa}/{\displaystyle \frac{-b+\sqrt{b^2-4ac}}{2a}}} % 
+%   \draw (\x,0.1) -- (\x,-0.1) node[below] {$\xtext$};
+%\draw[domain=-5:5, help lines, smooth]
+%       plot ({\x},{0.2*(\x-\xa)*(\x-\xb)});
+%\end{tikzpicture}
+
+% грязный хак
+
+1) Первое задание:
+\begin{center}
+    \begin{tikzpicture}[scale = 2]
+    \draw [line width=0.5mm] (0,0)node [left] {${m}_1$}  -- (2,3.46)node [above] {${m}_2$} -- (4,0)node [right] {${m}_3$} -- (0,0);
+    \draw [line width=0.3mm, -latex] (0,0) -- (xyz polar cs:angle=30,radius=2.5) node [above,minimum size=1.2cm] {$\overline{U}$};
+    \draw[dashed] (xyz polar cs:angle=30,radius=2.5) -- +(xyz polar cs:angle=120,radius=2);
+    \draw[dashed] (xyz polar cs:angle=30,radius=2.5) -- +(xyz polar cs:angle=-60,radius=2);
+    \draw[dashed] (xyz polar cs:angle=30,radius=2.5) -- +(180:2);
+    \draw[dashed] (xyz polar cs:angle=30,radius=2.5) -- +(0:2);
+    \draw[dashed] (xyz polar cs:angle=30,radius=2.5) -- +(-120:2);
+    \draw[dashed] (xyz polar cs:angle=30,radius=2.5) -- +(60:2);
+    \draw (xyz polar cs:angle=30,radius=2.5) -- +(-90:1.25)node [below,minimum size=1.2cm] {${U}_A$};
+    \draw (xyz polar cs:angle=30,radius=2.5) -- +(150:1.25)node [above left] {${U}_C$};
+    %\draw [dashed] (-4.2,0.6)-- (0.2,0.6);
+    %\draw[very thick] (-1.7,0.6) -- (-1.7, 0)node [below] {$S_1$};
+    %\draw[very thick] (-1.7,0.6) -- (-3.1,1.35)node [above left ] {${S}_2$};
+    %\draw [thin] (-3.8,1.35) -- (-0.2, 1.35) ;
+    \end{tikzpicture}    
+\end{center}
+2) Второе задание:
+$$U=200B$$
+$$alpha = 30^{\circ} $$
+$$f= 5 kHz$$
+
+\begin{center}
+\begin{tikzpicture}[scale =1.5 ]
+
+   \newdimen\R
+   \R=3cm
+   \draw (0:\R) \foreach \x in {60,120,...,360} {  -- (\x:\R) };
+   \foreach \x/\l/\p in
+     { 60/{011}/above,
+      120/{010}/above,
+      180/{110}/left,
+      240/{100}/below,
+      300/{101}/below,
+      360/{001}/right
+     }
+     \node[inner sep=1pt,circle,draw,fill,label={\p:\l}] at (\x:\R) {};
+     \draw  (0,0) circle (2.6);
+     \draw [-latex] (0,0) -- (30:2.6cm);
+     \draw [thick,-latex] (0,0) -- (60:3cm);
+     \draw [line width=1mm,-latex,green] (0,0) -- (60:1.5cm);
+     \draw [thick,-latex] (0,0) -- (120:3cm);
+     \draw [thick,-latex] (0,0) -- (180:3cm);
+     \draw [thick,-latex] (0,0) -- (240:3cm);
+     \draw [thick,-latex] (0,0) -- (300:3cm);
+     \draw [thick,-latex] (0,0) -- (360:3cm);
+     \draw [line width=1mm,-latex,red] (0,0) -- (360:1.5cm);
+     \node [line width=2mm,blue] at (0,0) {\textbullet};
+     \draw (1,0) arc (0:30:1);
+     \node[] at (15:1.3)  {$30^{\circ}$};
+     \draw [dashed] (30:2.6cm) -- (1.5,0);
+     \draw [dashed] (30:2.6cm) -- (0.75,1.3);
+
+
+\end{tikzpicture}
+\end{center}
+
+3) Третье задание: 
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+\begin{axis}[
+  samples at={-1,-0.5,...,3}, % gives a data point every pi/4
+  xlabel = $t$,
+  ylabel = $m$,
+  axis lines = center, 
+  enlargelimits,
+  every axis x label/.append style = {below},
+  every axis y label/.append style = {left},
+  xtick = {-1, 1, 3},
+  %xticklabels = {$-1$, $1$, $3$}, % not needed, numbers are set in math mode by default
+  declare function = {
+    T(\x) = (2 / pi) * rad(asin(sin(deg(pi * \x))));
+  }
+]
+\addplot[ultra thick, black] {T(x)};
+
+      
+\addplot [very thick,
+    domain=-3:3, 
+    samples=100, 
+    color=blue,
+]
+{y};
+\addplot [very thick,
+    domain=-3:3, 
+    samples=100, 
+    color=red,
+]
+{y+1};
+\addplot [very thick,
+    domain=-3:3, 
+    samples=100, 
+    color=green,
+]
+{y-1};
+      
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+ 
+\end{document}
